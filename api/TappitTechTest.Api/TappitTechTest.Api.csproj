@@ -8,5 +8,10 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\TappitTechTest.Core\TappitTechTest.Core.csproj" />
+    <ProjectReference Include="..\TappitTechTest.Infrastructure\TappitTechTest.Infrastructure.csproj" />
+  </ItemGroup>
+
 
 </Project>
