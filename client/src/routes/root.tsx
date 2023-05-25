@@ -1,23 +1,9 @@
-import { useEffect, useState } from "react";
 import { IPerson } from "../services/interfaces";
-import { getPeople } from "../services/people-service";
-import { Link } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import Td from "../components/td";
 
 const Root = () => {
-  const [people, setPeople] = useState<IPerson[]>([]);
-
-  useEffect(() => {
-    const fetchPeople = async () => {
-      try {
-        const people = await getPeople();
-
-        setPeople(() => people);
-      } catch (error) {}
-    };
-
-    fetchPeople();
-  }, []);
+  const people = useLoaderData() as IPerson[];
 
   return (
     <main className="flex h-full justify-center bg-slate-50 py-16">
