@@ -40,6 +40,8 @@ namespace Tappit.Api
             services.AddScoped<IFavouriteSportsRepository, FavouriteSportsRepository>();
             services.AddScoped<ISportsRepository, SportsRepository>();
             services.AddScoped<IPeopleService, PeopleService>();
+
+            services.AddCors();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -53,6 +55,10 @@ namespace Tappit.Api
                 {
                     options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
                     options.RoutePrefix = string.Empty;
+                });
+                app.UseCors(options =>
+                {
+                    options.WithOrigins("http://localhost:3000");
                 });
             }
 

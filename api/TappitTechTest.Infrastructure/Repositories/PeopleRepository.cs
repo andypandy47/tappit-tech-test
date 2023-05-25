@@ -58,7 +58,8 @@ namespace TappitTechTest.Infrastructure.Repositories
                     SELECT p.PersonId as Id, p.FirstName, p.LastName, p.IsAuthorised as Authorised, p.IsValid as Valid, p.IsEnabled as Enabled, s.SportId, s.Name
                       FROM tappittechnicaltest.people p
                 LEFT OUTER JOIN tappittechnicaltest.favouritesports fs ON fs.PersonId = p.PersonId
-                LEFT OUTER JOIN tappittechnicaltest.sports s ON fs.SportId = s.SportId;";
+                LEFT OUTER JOIN tappittechnicaltest.sports s ON fs.SportId = s.SportId
+                       ORDER BY p.PersonId";
 
             var people = new Dictionary<int, Person>();
 

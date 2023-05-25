@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html,
+body,
+#root {
+  height: 100dvh;
+}
+
+th,
+td {
+  border: 1px black solid;
+}
+
+td a {
+  display: flex;
+  flex: 1;
+  height: 3.5rem;
+  align-items: center;
+  justify-content: center;
+}
