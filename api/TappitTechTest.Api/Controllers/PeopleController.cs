@@ -39,6 +39,11 @@ namespace TappitTechTest.Api.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(int id, [FromBody] PersonUpdate updatedPerson)
         {
+            if (updatedPerson is null)
+            {
+                return this.BadRequest();
+            }
+
             var result = await this.Get(id);
 
             if (result is NotFoundResult)

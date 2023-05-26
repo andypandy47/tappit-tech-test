@@ -36,6 +36,11 @@ namespace TappitTechTest.Infrastructure.Services
 
         public async Task Update(int id, PersonUpdate updatedPerson)
         {
+            if (updatedPerson is null)
+            {
+                throw new ArgumentNullException(nameof(updatedPerson));
+            }
+
             await this.PeopleRepository.Update(id, updatedPerson);
 
             await this.FavouriteSportsRepository.Delete(id);

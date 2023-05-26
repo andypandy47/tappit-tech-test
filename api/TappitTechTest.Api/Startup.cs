@@ -59,6 +59,8 @@ namespace Tappit.Api
                 app.UseCors(options =>
                 {
                     options.WithOrigins("http://localhost:3000");
+                    options.AllowAnyMethod();
+                    options.AllowAnyHeader();
                 });
             }
 

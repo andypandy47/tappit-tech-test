@@ -45,6 +45,12 @@ namespace TappitTechTest.Infrastructure.Repositories
             splitOn: "SportId");
 
             var person = result.FirstOrDefault();
+
+            if (person is null)
+            {
+                return null;
+            }
+
             person.FavouriteSports = favouriteSports;
 
             return person;
