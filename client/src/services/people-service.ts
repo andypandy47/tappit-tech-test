@@ -1,23 +1,23 @@
-import { IPerson } from "./interfaces";
-
-const baseUrl = "https://localhost:5001";
+import http from "@shared/http";
+import { IPerson, IPersonUpdate } from "./interfaces";
 
 export const getPeople = async (): Promise<IPerson[]> => {
-  const response = await fetch(`${baseUrl}/people`);
+  const response = await http.get<IPerson[]>("people");
 
-  const people = (await response.json()) as IPerson[];
-
-  return people;
+  return response?.data;
 };
 
 export const getPerson = async (id: string): Promise<IPerson> => {
-  const response = await fetch(`${baseUrl}/people/${id}`);
+  const response = await http.get<IPerson>(`people/${id}`);
 
-  if (!response.ok) {
-    throw new Error(`${response.status}: ${response.statusText}`);
-  }
+  return response.data;
+};
 
-  const person = (await response.json()) as IPerson;
+export const updatePerson = async (
+  id: number,
+  personUpdate: IPersonUpdate
+): Promise<void> => {
+  const response = await http.put(`/people/${id}`, personUpdate);
 
-  return person;
+  return response.data;
 };

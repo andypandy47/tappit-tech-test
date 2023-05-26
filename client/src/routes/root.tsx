@@ -1,6 +1,6 @@
-import { IPerson } from "../services/interfaces";
 import { useLoaderData } from "react-router-dom";
-import Td from "../components/td";
+import { IPerson } from "@services/interfaces";
+import Td from "@components/td";
 
 const Root = () => {
   const people = useLoaderData() as IPerson[];

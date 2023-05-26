@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+
+.btn-base {
+  @apply inline-flex items-center rounded border border-gray-300 px-4 py-2 text-base font-semibold shadow-sm transition duration-300;
+  @apply hover:bg-gray-200;
+}
+
+.btn-base.btn-primary {
+  @apply bg-green-600 text-white;
+  @apply hover:bg-green-700;
+}
+
+.btn-base.btn-danger {
+  @apply bg-red-600 text-white;
+  @apply hover:bg-red-700;
+}

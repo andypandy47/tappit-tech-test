@@ -9,16 +9,15 @@ const Input: React.FunctionComponent<
 > = (props) => {
   return (
     <div className="flex items-center">
-      <label
-        className="mr-12 w-[150px] text-lg font-semibold"
-        htmlFor={props.name}
-      >
+      <label className="w-48 text-lg font-semibold" htmlFor={props.name}>
         {props.label}
       </label>
       <input
         type="text"
         {...props}
         className={`${props.className} flex-1 border border-solid border-black`}
+        name={props.name}
+        id={props.name}
       />
     </div>
   );

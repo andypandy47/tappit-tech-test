@@ -1,19 +1,20 @@
 {
-  "name": "template-vite-react-ts-tailwind-v3",
-  "version": "0.0.0",
+  "name": "tappit-technical-test-ui",
+  "version": "1.0.0",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
+    "axios": "^1.4.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.11.2"
   },
   "devDependencies": {
-    "@types/react": "^17.0.33",
-    "@types/react-dom": "^17.0.10",
+    "@types/react": "^18.2.7",
+    "@types/react-dom": "^18.2.4",
     "@vitejs/plugin-react": "^1.0.7",
     "prettier": "^2.5.1",
     "prettier-plugin-tailwindcss": "^0.1.5",
